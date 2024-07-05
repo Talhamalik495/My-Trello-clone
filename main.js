@@ -37,7 +37,7 @@ const createDiv = (a) => {
 // xxxxxxxxxxxxx
 const create = (target) => {
     const elementCreate = document.createElement("p")
-    elementCreate.setAttribute("dragable", "true")
+    elementCreate.setAttribute("draggable", "true")
     elementCreate.classList = "style1"
     const textNodes = document.createTextNode(target)
     const apend = elementCreate.appendChild(textNodes)
@@ -50,6 +50,9 @@ const valueCreate = (event) => {
     const formTarget = event.target;
     const parent = formTarget.parentElement;
     const value = formTarget.firstElementChild.value;
+    if (value == "") {
+        const elementCreate = document.createElement("")
+    }
     console.log(value);
     let target = create(value)
     parent.insertBefore(target, formTarget)
